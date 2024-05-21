@@ -44,7 +44,7 @@ function Home() {
                     </button>
                 </div>
             </section>
-            <section className="featured-posts container">
+            <section className="featured-posts container pt-2">
                 <h3 className="text-center text-uppercase py-4">featured posts</h3>
                 <div className="row">
                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -53,35 +53,110 @@ function Home() {
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" className="btn btn-primary">Read more</a>
+                                <div className="d-grid">
+                                    <a href="#" className="btn btn-primary">Read more</a>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="col-lg-4 col-md-4 col-sm-12">
                         <div className="card">
                             <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGhvdXNlfGVufDB8fDB8fHww" className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" className="btn btn-primary">Read more</a>
+                                <div className="d-grid">
+                                    <a href="#" className="btn btn-primary">Read more</a>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="col-lg-4 col-md-4 col-sm-12">
                         <div className="card">
                             <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGhvdXNlfGVufDB8fDB8fHww" className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" className="btn btn-primary">Read more</a>
+                                <div className="d-grid">
+                                    <a href="#" className="btn btn-primary">Read more</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="latest-posts container">
-                <h3 className="text-center text-uppercase pt-4">latest posts</h3>
-                
+            <section className="latest-posts container pt-2">
+                <h3 className="text-center text-uppercase py-4">latest posts</h3>
+                <div className="row">
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                        <div className="card">
+                            <img src="https://media.istockphoto.com/id/1987087979/es/foto/nueva-vivienda-unifamiliar-sostenible-con-jard%C3%ADn.webp?b=1&s=170667a&w=0&k=20&c=HgbTkw2MT9SoIQPPSRJkczthA4-YA6oToVwVs_Dkpko=" className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div className="d-grid">
+                                    <a href="#" className="btn btn-primary">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                        <div className="card">
+                            <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGhvdXNlfGVufDB8fDB8fHww" className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div className="d-grid">
+                                    <a href="#" className="btn btn-primary">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                        <div className="card">
+                            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGhvdXNlfGVufDB8fDB8fHww" className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div className="d-grid">
+                                    <a href="#" className="btn btn-primary">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="d-flex flex-column justify-content-center align-items-center container-fluid bg-primary bg-gradient mt-4" style={{ minHeight: "180px"}}>
+                <i className="fs-1 text-white my-3 fa-solid fa-location-dot"></i>
+                <h3 className="text-white text-center text-uppercase">We have wide variety of Posts</h3>
+                <button className="btn btn-primary my-2 fs-5 fw-bold">View All Posts</button>
             </section>
             <section className="our-portfolio  container">
                 <h3 className="text-center text-uppercase pt-4">our portfolio</h3>
-                
+                <div className="container text-center">
+                    <div className="row g-1">
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                        <div className="p-3">
+                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGhvdXNlfGVufDB8fDB8fHww" />
+                        </div>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                        <div className="p-3">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTV8fGhvdXNlfGVufDB8fDB8fHww" />
+                        </div>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                        <div className="p-3">
+                            <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fGhvdXNlfGVufDB8fDB8fHww" />
+                        </div>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                        <div className="p-3">
+                            <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTR8fGhvdXNlfGVufDB8fDB8fHww" />
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     )

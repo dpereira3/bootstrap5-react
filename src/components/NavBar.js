@@ -13,13 +13,17 @@ function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                        <NavLink className="nav-link" to="/about">About us</NavLink>
+                            <NavLink className="nav-link" to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                        <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                            <NavLink className="nav-link" to="/posts">Posts</NavLink>
                         </li>
-                        
-                        
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/about">About us</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                        </li>
                     </ul>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
