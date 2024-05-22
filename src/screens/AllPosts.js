@@ -41,14 +41,22 @@ function AllPosts() {
                         </div>
                     </div>
                     : posts.map((post, index) => {
-                            return <div key={index} className="col-lg-4 col-md-4 col-sm-12">
+                            return <div key={index} className="col-lg-4 col-md-4 col-sm-12 mb-2">
                                         <div className="card">
-                                            <img src="https://source.unsplash.com/random/800x400?house" className="card-img-top" alt="..." />
+                                            <img style={{ height: "300px" }} src="https://source.unsplash.com/random/800x400?house" className="card-img-top" alt="..." />
                                             <div className="card-body">
                                                 <h5 className="card-title">{post.title}</h5>
                                                 <p className="card-text">{post.body}</p>
-                                                <div className="d-grid">
-                                                    <Link to={`/posts/${post.id}/${post.userId}`} className="btn btn-primary">Read more</Link>
+                                                <div className="d-flex justify-content-between">
+                                                    <Link to={`/posts/${post.id}/${post.userId}`} className="btn btn-primary">
+                                                    <i className="fa-solid fa-location-arrow me-1"></i>Details
+                                                    </Link>
+                                                    <Link to={`/create/${post.id}/${post.userId}`} className="btn btn-warning">
+                                                        <i className="fa-solid fa-pen-to-square me-1"></i>Edit
+                                                    </Link>
+                                                    <Link to={`/posts/${post.id}/${post.userId}`} className="btn btn-danger">
+                                                        <i className="fa-solid fa-trash me-1"></i>Delete
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>
