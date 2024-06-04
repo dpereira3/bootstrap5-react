@@ -124,7 +124,9 @@ function CreatePost() {
                         <textarea value={body} onChange={(e) => {setBody(e.target.value)}} className="form-control" id="description" required></textarea>
                     </div>
                     <div className="d-grid">
-                        <button type="submit" className="btn btn-primary">Create Post</button>
+                        <button type="submit" className="btn btn-primary">
+                            {isEdit ? 'Edit Post' : 'Create Post'} 
+                        </button>
                     </div>
                     
                 </form>

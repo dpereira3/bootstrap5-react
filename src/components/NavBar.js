@@ -33,6 +33,12 @@ function NavBar() {
                         <button className="btn btn-primary" type="submit">
                             <i className="fa-solid fa-magnifying-glass"></i>    
                         </button>
+                        <NavLink to='/login' className="btn btn-primary" >
+                            <i className="fa-solid fa-right-to-bracket"></i>    
+                        </NavLink>
+                        <NavLink to='/signup' className="btn btn-primary" >
+                            <i className="fa-solid fa-user-plus"></i>    
+                        </NavLink>
                     </form>
                     </div>
                 </div>

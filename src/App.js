@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import AllPosts from './screens/AllPosts';
 import PostDetail from './screens/PostDetail';
 import CreatePost from './screens/CreatePost';
+import SignUp from './screens/SignUp';
+import Login from './screens/Login';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/signup" element={<SignUp />}></Route>
           <Route exact path="/posts" element={<AllPosts />}></Route>
           <Route exact path="/create" element={<CreatePost />}></Route>
           <Route exact path="/create/:postId/:userId" element={<CreatePost />}></Route>
