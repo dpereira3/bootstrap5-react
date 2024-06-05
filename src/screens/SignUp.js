@@ -64,24 +64,24 @@ function SignUp() {
                 <form onSubmit={(event) => signup(event)}>
                     <div className="mb-3">
                         <label htmlFor="firstname" className="form-label">First name</label>
-                        <input onChange={(e) => setFname(e.target.value)} type="text" className="form-control" id="firstname" required />
+                        <input value={fname} onChange={(e) => setFname(e.target.value)} type="text" className="form-control" id="firstname" required />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="lastname" className="form-label">Last name</label>
-                        <input onChange={(e) => setLname(e.target.value)} type="text" className="form-control" id="lastname" required />
+                        <input value={lname} onChange={(e) => setLname(e.target.value)} type="text" className="form-control" id="lastname" required />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="phone" className="form-label">Contact number</label>
-                        <input onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" id="phone" />
+                        <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" id="phone" />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email address</label>
-                        <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email" required/>
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email" required/>
                         <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Password</label>
-                        <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="password" required/>
+                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="password" required/>
                     </div>
                     <div className="d-grid">
                         <button type="submit" className="btn btn-primary">Signup</button>
