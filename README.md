@@ -68,4 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # bootstrap5-react
+Tutorial on Udemy.com:
+https://www.udemy.com/course/modern-web-development-with-react-bootstrap-redux-rest-api/
+
+En base al tutorial de Udemy
