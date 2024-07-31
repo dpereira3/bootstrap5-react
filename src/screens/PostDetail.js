@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import { API_BASE_URL } from '../config/constant'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import { API_BASE_URL, ACCESS_KEY } from '../config/constant'
 import './PostDetail.css'
 
 function PostDetail() {
@@ -14,6 +14,21 @@ function PostDetail() {
     const [email, setEmail] = useState([])
     const [phone, setPhone] = useState([])
     const [website, setWebsite] = useState([])
+    const [photo, setPhoto] = useState(null);
+
+    const getPhotoStored = () => {
+        // Recuperar el objeto `photo` desde `localStorage`
+        console.log('getPhotoStored is called'); // Verificar si la función se ejecuta
+        const storedPhoto = localStorage.getItem('selectedPhoto');
+        if (storedPhoto) {
+            console.log('Photo retrieved from localStorage:', storedPhoto);
+            setPhoto(JSON.parse(storedPhoto));
+            console.log(photo);
+        } else {
+            console.error('No photo found in localStorage');
+            setPhoto(null);
+        }
+    }
 
     const getPostAndUser = () => {
         axios.get(`${API_BASE_URL}/posts/${postId}`)
@@ -40,9 +55,21 @@ function PostDetail() {
 
     //we want to load data on page load of this component
     useEffect(() => {
+        console.log('useEffect is called'); // Verificar si el useEffect se ejecuta
         getPostAndUser();
+        getPhotoStored();
         //console.log("Post detail loaded")
     }, []); //empty array means execute only once when component loads
+
+
+    // Hook para verificar cuando el estado `photo` cambia ya que no carga la foto en un primer momento
+    useEffect(() => {
+        if (photo) {
+            console.log('Photo state updated:', photo);
+        } else {
+            console.log('Photo is still null');
+        }
+    }, [photo]); // Este hook se ejecutará cada vez que `photo` cambie
 
     const { postId, userId } = useParams();
     return (
@@ -55,7 +82,7 @@ function PostDetail() {
             <div className="row mt-3">
                 <div className="col-md-9 col-lg-9 col-sm-12">
                     <div className="card mb-3">
-                        <img src="https://source.unsplash.com/random/800x400?house" className="card-img-top card-img-height" alt="..." />
+                        <img src={ photo ? photo.urls.small : "nn" } className="card-img-top card-img-height" alt="..." />
                         <div className="card-body">
                             <h5 className="card-title">{title}</h5>
                             <p className="card-text">{body}</p>

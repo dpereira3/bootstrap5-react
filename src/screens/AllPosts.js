@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { API_BASE_URL } from '../config/constant'
+import { API_BASE_URL, ACCESS_KEY } from '../config/constant'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
@@ -10,6 +10,9 @@ function AllPosts() {
     //useState hook helps us create this variable with empty array
     const [posts, setPosts] = useState([])
     const [loader, setLoader] = useState(false)
+    const [photos, setPhotos] = useState([]);
+
+    const [photoToPass, setPhotoToPass] = useState([]);
 
     //function getAllPosts() {}
     //ES6 function to get all posts from REST API
@@ -24,12 +27,46 @@ function AllPosts() {
         });
     }
 
+    //funcion para guardar la foto del post
+    function handleViewDetails(photo) {
+        // Guardar el objeto `photo` en `localStorage`
+        if(localStorage.getItem('selectedPhoto') !== null) {
+            localStorage.setItem('selectedPhoto', '');
+        }
+        localStorage.setItem('selectedPhoto', JSON.stringify(photo));
+        //console.log(photo)
+      }
+
     //we want to load data on page load of this component
     useEffect(() => {
         getAllPosts();
         //console.log("all posts loaded")
     }, []); //empty array means execute only once when component loads
+  
+    const fetchPhotos = async () => {
+        //console.log(ACCESS_KEY);
+        try {
+            const response = await axios.get('https://api.unsplash.com/search/photos', {
+                params: {
+                    client_id: ACCESS_KEY, // Reemplaza con tu Access Key
+                    query: 'house',
+                    page: 1, // Cantidad de fotos a obtener
+                    per_page: 100,
+                    orientation: 'landscape'
+                },
+            });
+        setPhotos(response.data);
+        //console.log(response.data);
+        //console.log(photos.results[1].urls.small);
+        } catch (error) {
+            console.error('Error fetching photos:', error);
+        }
+    };
 
+    useEffect(() => {
+        fetchPhotos();
+    }, []);
+    
     return (
         <div>
             <section className="container pt-2">
@@ -44,21 +81,33 @@ function AllPosts() {
                         </div>
                     </div>
                     : posts.map((post, index) => {
-                            return <div key={index} className="col-lg-4 col-md-4 col-sm-12 mb-2">
-                                        <div className="card">
-                                            <img style={{ height: "300px" }} src="https://source.unsplash.com/random/800x400?house" className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">{post.title}</h5>
-                                                <p className="card-text">{post.body}</p>
-                                                <div className="d-grid">
-                                                    <Link to={`/posts/${post.id}/${post.userId}`} className="btn btn-primary">
-                                                    <i className="fa-solid fa-location-arrow me-1"></i>Details
-                                                    </Link>
-                                                </div>
-                                            </div>
+                        const photo = photos.results[index % photos.results.length]; // Ensure we have a photo for each post
+                        //setPhotoToPass(photo)
+                        return (
+                            <div key={index} className="col-lg-4 col-md-4 col-sm-12 mb-2">
+                                <div className="card">
+                                    {photo && (
+                                        <img 
+                                            style={{ height: "300px" }} 
+                                            src={photo.urls.small} 
+                                            alt={photo.alt_description} 
+                                            className="card-img-top" 
+                                        />
+                                    )}
+                                    <div className="card-body">
+                                        <h5 className="card-title">{post.title}</h5>
+                                        <p className="card-text">{post.body}</p>
+                                        <div className="d-grid">
+                                            <Link to={{ pathname: `/posts/${post.id}/${post.userId}`, state: {photo} }} className="btn btn-primary"
+                                             onClick={() => handleViewDetails(photo)}>
+                                                <i className="fa-solid fa-location-arrow me-1"></i>Details
+                                            </Link>
                                         </div>
                                     </div>
-                        })
+                                </div>
+                            </div>
+                        )
+                    })
                     }
                 </div>
             </section>
