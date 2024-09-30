@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink, Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -8,10 +9,10 @@ function Footer() {
                 <div className="col-lg-4 col-md-4 col-sm-12 ">
                     <h5>Quick Links</h5>
                     <div className="d-flex flex-column mb-2">
-                        <a href="#" className="text-white p-1">About us</a>
-                        <a href="#" className="text-white p-1">Our Post</a>
-                        <a href="#" className="text-white p-1">Our Team</a>
-                        <a href="#" className="text-white p-1">Contact us</a>
+                        <NavLink to="/about" className="text-white p-1">About us</NavLink>
+                        <NavLink to="/posts" className="text-white p-1">Our Post</NavLink>
+                        <NavLink to="#" className="text-white p-1">Our Team</NavLink>
+                        <NavLink to="/contact" className="text-white p-1">Contact us</NavLink>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-12 mb-2">

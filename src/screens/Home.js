@@ -1,5 +1,6 @@
-import React from 'react'
-import './Home.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 function Home() {
     return (
@@ -129,7 +130,7 @@ function Home() {
             <section className="d-flex flex-column justify-content-center align-items-center container-fluid bg-primary bg-gradient mt-4" style={{ minHeight: "180px"}}>
                 <i className="fs-1 text-white my-3 fa-solid fa-location-dot"></i>
                 <h3 className="text-white text-center text-uppercase">We have wide variety of Posts</h3>
-                <button className="btn btn-primary my-2 fs-5 fw-bold">View All Posts</button>
+                <Link className="btn btn-primary my-2 fs-5 fw-bold" to="/posts">View All Posts</Link>
             </section>
             <section className="our-portfolio  container">
                 <h3 className="text-center text-uppercase pt-4">our portfolio</h3>
